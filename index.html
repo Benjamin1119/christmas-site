@@ -51,6 +51,8 @@
     img{
       display:block;
       width:100%;
+      height:100%;
+      object-fit:cover;
     }
 
     button{
@@ -306,15 +308,9 @@
 
     .feature-image{
       min-height:720px;
-
+      position: relative;
       background:var(--warm);
-
-      display:flex;
-      align-items:center;
-      justify-content:center;
-
-      text-align:center;
-      color:#77736c;
+      overflow: hidden;
     }
 
     .feature-panel{
@@ -396,14 +392,6 @@
       position:relative;
 
       background:#e4dfd6;
-
-      display:flex;
-      align-items:center;
-      justify-content:center;
-
-      color:#77736b;
-      text-align:center;
-
       overflow:hidden;
     }
 
@@ -411,6 +399,7 @@
       position:absolute;
       top:12px;
       left:12px;
+      z-index: 2;
 
       padding:7px 10px;
 
@@ -426,6 +415,7 @@
       left:12px;
       right:12px;
       bottom:12px;
+      z-index: 2;
 
       border:none;
 
@@ -517,6 +507,7 @@
     }
 
     .party-image{
+      position: relative;
       background:
         linear-gradient(
           145deg,
@@ -524,13 +515,7 @@
           #243028 60%,
           #17201b
         );
-
-      display:flex;
-      align-items:center;
-      justify-content:center;
-
-      color:rgba(255,255,255,.7);
-      text-align:center;
+      overflow: hidden;
     }
 
 
@@ -598,14 +583,9 @@
     }
 
     .gift-image{
+      position: relative;
       background:#d7d0c5;
-
-      display:flex;
-      align-items:center;
-      justify-content:center;
-
-      color:#777;
-      text-align:center;
+      overflow: hidden;
     }
 
     .gift-copy{
@@ -995,7 +975,7 @@
 
 
     <div class="hero-visual">
-
+      <!-- 這裡可放入您的主視覺圖片，例如：<img src="images/你的主視覺.jpg" alt="主視覺"> -->
       <div>
         CHRISTMAS HERO IMAGE<br><br>
         聖誕居家派對 × 大型餐桌 × 咖啡 × 熱食
@@ -1083,8 +1063,7 @@
     <div class="feature-grid">
 
       <div class="feature-image">
-        CHRISTMAS MORNING IMAGE<br><br>
-        咖啡 × 保久乳 × 貝果 × 冬日晨光
+        <img src="images/圖片2.png" alt="聖誕晨光咖啡">
       </div>
 
 
@@ -1158,9 +1137,7 @@
       <article class="product-card">
 
         <div class="product-image">
-
-          戀職人保久乳<br>
-          商品 PNG
+          <img src="images/保久乳.jpg" alt="戀職人保久乳">
 
           <div class="product-badge">
             MORNING PICK
@@ -1202,9 +1179,7 @@
       <article class="product-card">
 
         <div class="product-image">
-
-          精品咖啡<br>
-          商品 PNG
+          <img src="images/精品咖啡商品.jpg" alt="精品咖啡">
 
           <button class="quick-add">
             ＋ QUICK ADD
@@ -1242,9 +1217,7 @@
       <article class="product-card">
 
         <div class="product-image">
-
-          金獎濾掛咖啡<br>
-          商品 PNG
+          <img src="images/金獎濾掛.jpg" alt="金獎濾掛咖啡">
 
           <div class="product-badge">
             BEST SELLER
@@ -1286,9 +1259,7 @@
       <article class="product-card">
 
         <div class="product-image">
-
-          貝果<br>
-          商品 PNG
+          <img src="images/貝果.jpg" alt="貝果">
 
           <button class="quick-add">
             ＋ QUICK ADD
@@ -1360,10 +1331,11 @@
 
 
     <div class="party-image">
-
-      CHRISTMAS PARTY HERO IMAGE<br><br>
-      雞翅 × 德腸 × 雞塊 × 麵包 × 飲品 × 甜點
-
+      <!-- 這裡可放入派對大圖，例如：<img src="images/party-hero.jpg" alt="派對大圖"> -->
+      <div style="display:flex; align-items:center; justify-content:center; height:100%; color:rgba(255,255,255,.7);">
+        CHRISTMAS PARTY HERO IMAGE<br><br>
+        雞翅 × 德腸 × 雞塊 × 麵包 × 飲品 × 甜點
+      </div>
     </div>
 
   </div>
@@ -1435,9 +1407,10 @@
         <article class="product-card">
 
           <div class="product-image">
-
-            雞翅<br>
-            商品圖
+            <!-- <img src="images/chicken-wings.jpg" alt="派對雞翅"> -->
+            <div style="display:flex; align-items:center; justify-content:center; height:100%; color:#77736b;">
+              雞翅<br>商品圖
+            </div>
 
             <button class="quick-add">
               ＋ QUICK ADD
@@ -1475,9 +1448,10 @@
         <article class="product-card">
 
           <div class="product-image">
-
-            德式香腸<br>
-            商品圖
+            <!-- <img src="images/sausage.jpg" alt="德式香腸"> -->
+            <div style="display:flex; align-items:center; justify-content:center; height:100%; color:#77736b;">
+              德式香腸<br>商品圖
+            </div>
 
             <button class="quick-add">
               ＋ QUICK ADD
@@ -1515,9 +1489,10 @@
         <article class="product-card">
 
           <div class="product-image">
-
-            雞塊<br>
-            商品圖
+            <!-- <img src="images/nuggets.jpg" alt="派對雞塊"> -->
+            <div style="display:flex; align-items:center; justify-content:center; height:100%; color:#77736b;">
+              雞塊<br>商品圖
+            </div>
 
             <button class="quick-add">
               ＋ QUICK ADD
@@ -1555,9 +1530,10 @@
         <article class="product-card">
 
           <div class="product-image">
-
-            麵包／料麵包<br>
-            商品圖
+            <!-- <img src="images/bread.jpg" alt="派對麵包"> -->
+            <div style="display:flex; align-items:center; justify-content:center; height:100%; color:#77736b;">
+              麵包／料麵包<br>商品圖
+            </div>
 
             <button class="quick-add">
               ＋ QUICK ADD
@@ -1620,9 +1596,10 @@
         <article class="product-card">
 
           <div class="product-image">
-
-            聖誕甜點<br>
-            商品圖
+            <!-- <img src="images/dessert.jpg" alt="派對甜點"> -->
+            <div style="display:flex; align-items:center; justify-content:center; height:100%; color:#77736b;">
+              聖誕甜點<br>商品圖
+            </div>
 
             <button class="quick-add">
               ＋ QUICK ADD
@@ -1660,9 +1637,10 @@
         <article class="product-card">
 
           <div class="product-image">
-
-            烘焙甜點<br>
-            商品圖
+            <!-- <img src="images/bakery.jpg" alt="烘焙點心"> -->
+            <div style="display:flex; align-items:center; justify-content:center; height:100%; color:#77736b;">
+              烘焙甜點<br>商品圖
+            </div>
 
             <button class="quick-add">
               ＋ QUICK ADD
@@ -1725,9 +1703,10 @@
         <article class="product-card">
 
           <div class="product-image">
-
-            MONIN 糖漿<br>
-            商品圖
+            <!-- <img src="images/monin.jpg" alt="MONIN 糖漿"> -->
+            <div style="display:flex; align-items:center; justify-content:center; height:100%; color:#77736b;">
+              MONIN 糖漿<br>商品圖
+            </div>
 
             <button class="quick-add">
               ＋ QUICK ADD
@@ -1765,9 +1744,10 @@
         <article class="product-card">
 
           <div class="product-image">
-
-            咖啡／飲品<br>
-            商品圖
+            <!-- <img src="images/drink.jpg" alt="派對飲品"> -->
+            <div style="display:flex; align-items:center; justify-content:center; height:100%; color:#77736b;">
+              咖啡／飲品<br>商品圖
+            </div>
 
             <button class="quick-add">
               ＋ QUICK ADD
@@ -1820,10 +1800,11 @@
   <div class="gift-grid">
 
     <div class="gift-image">
-
-      CHRISTMAS GIFT HERO IMAGE<br><br>
-      精品咖啡禮盒 × 松枝 × 緞帶 × 冬日送禮
-
+      <!-- <img src="images/gift-hero.jpg" alt="禮盒大圖"> -->
+      <div style="display:flex; align-items:center; justify-content:center; height:100%; color:#777;">
+        CHRISTMAS GIFT HERO IMAGE<br><br>
+        精品咖啡禮盒 × 松枝 × 緞帶 × 冬日送禮
+      </div>
     </div>
 
 
