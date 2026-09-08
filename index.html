@@ -1,0 +1,2100 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Christmas at Home｜開元食品</title>
+
+  <style>
+    :root{
+      --bg:#f4f2ed;
+      --paper:#fbfaf7;
+      --ink:#1d1d1b;
+      --muted:#7b776f;
+      --line:#d9d5cd;
+      --green:#27372f;
+      --red:#a23b34;
+      --accent:#dfe7b4;
+      --warm:#ded5c7;
+      --white:#ffffff;
+    }
+
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:
+        Inter,
+        "Noto Sans TC",
+        "PingFang TC",
+        "Microsoft JhengHei",
+        sans-serif;
+
+      background:var(--bg);
+      color:var(--ink);
+      line-height:1.6;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    img{
+      display:block;
+      width:100%;
+    }
+
+    button{
+      font:inherit;
+    }
+
+    .container{
+      width:min(1360px,calc(100% - 64px));
+      margin:auto;
+    }
+
+    .kicker{
+      font-size:11px;
+      font-weight:700;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+    }
+
+    .section-title{
+      font-size:clamp(52px,7vw,105px);
+      line-height:.86;
+      letter-spacing:-.065em;
+      font-weight:700;
+    }
+
+    .body-copy{
+      font-size:16px;
+      color:var(--muted);
+      max-width:520px;
+      line-height:1.9;
+    }
+
+
+    /* =========================
+       NAV
+    ========================== */
+
+    .nav{
+      height:70px;
+      position:sticky;
+      top:0;
+      z-index:100;
+
+      background:rgba(244,242,237,.94);
+      backdrop-filter:blur(14px);
+
+      border-bottom:1px solid var(--line);
+    }
+
+    .nav-inner{
+      height:100%;
+      width:min(1360px,calc(100% - 64px));
+      margin:auto;
+
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .logo{
+      font-size:17px;
+      font-weight:800;
+      letter-spacing:-.03em;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:28px;
+      font-size:13px;
+    }
+
+    .nav-links a{
+      transition:.2s;
+    }
+
+    .nav-links a:hover{
+      opacity:.55;
+    }
+
+    .nav-shop{
+      background:var(--ink);
+      color:#fff;
+      padding:11px 20px;
+      border-radius:999px;
+    }
+
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero{
+      padding:26px;
+    }
+
+    .hero-grid{
+      min-height:calc(100vh - 122px);
+
+      display:grid;
+      grid-template-columns:.88fr 1.12fr;
+
+      background:var(--paper);
+    }
+
+    .hero-copy{
+      padding:clamp(45px,6vw,92px);
+
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+
+    .hero .kicker{
+      color:var(--red);
+    }
+
+    .hero h1{
+      margin-top:34px;
+
+      font-size:clamp(64px,8vw,122px);
+      line-height:.82;
+      letter-spacing:-.075em;
+    }
+
+    .hero-sub{
+      margin-top:46px;
+
+      font-size:clamp(22px,2.2vw,34px);
+      line-height:1.45;
+      font-weight:600;
+    }
+
+    .hero-bottom{
+      border-top:1px solid var(--line);
+      padding-top:20px;
+
+      display:flex;
+      justify-content:space-between;
+
+      font-size:11px;
+      color:var(--muted);
+      letter-spacing:.08em;
+    }
+
+    .hero-visual{
+      min-height:620px;
+      position:relative;
+
+      background:
+        linear-gradient(
+          145deg,
+          #56645a,
+          #2d3b33 55%,
+          #19211d
+        );
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      color:rgba(255,255,255,.75);
+      text-align:center;
+      letter-spacing:.08em;
+    }
+
+    .hero-badge{
+      position:absolute;
+      right:28px;
+      bottom:28px;
+
+      width:135px;
+      height:135px;
+
+      border-radius:50%;
+
+      background:var(--accent);
+      color:var(--ink);
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      text-align:center;
+      font-size:12px;
+      font-weight:700;
+
+      transform:rotate(7deg);
+    }
+
+
+    /* =========================
+       INTRO
+    ========================== */
+
+    .intro{
+      padding:140px 0 100px;
+    }
+
+    .intro-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:80px;
+    }
+
+    .intro-title{
+      font-size:clamp(42px,6vw,82px);
+      line-height:.95;
+      letter-spacing:-.055em;
+    }
+
+    .intro-right{
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-end;
+      gap:32px;
+    }
+
+    .category-nav{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .pill{
+      padding:11px 17px;
+      border:1px solid var(--ink);
+      border-radius:999px;
+
+      font-size:12px;
+      transition:.2s;
+    }
+
+    .pill:hover{
+      background:var(--ink);
+      color:#fff;
+    }
+
+
+    /* =========================
+       MORNING
+    ========================== */
+
+    .morning{
+      padding:50px 0 140px;
+    }
+
+    .feature-grid{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:22px;
+    }
+
+    .feature-image{
+      min-height:720px;
+
+      background:var(--warm);
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      text-align:center;
+      color:#77736c;
+    }
+
+    .feature-panel{
+      background:var(--green);
+      color:white;
+
+      padding:60px;
+
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+
+    .feature-panel .kicker{
+      color:var(--accent);
+    }
+
+    .feature-panel h2{
+      margin-top:24px;
+    }
+
+    .feature-panel p{
+      margin-top:30px;
+      color:rgba(255,255,255,.74);
+      max-width:420px;
+    }
+
+    .feature-link{
+      padding-bottom:12px;
+      border-bottom:1px solid rgba(255,255,255,.4);
+
+      display:flex;
+      justify-content:space-between;
+
+      font-size:12px;
+      letter-spacing:.06em;
+    }
+
+
+    /* =========================
+       PRODUCT
+    ========================== */
+
+    .products{
+      padding-bottom:150px;
+    }
+
+    .section-head{
+      margin-bottom:44px;
+
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:30px;
+    }
+
+    .section-head h3{
+      font-size:clamp(38px,5vw,66px);
+      letter-spacing:-.05em;
+    }
+
+    .section-head a{
+      border-bottom:1px solid var(--ink);
+      font-size:12px;
+    }
+
+    .product-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:16px;
+    }
+
+    .product-card{
+      position:relative;
+    }
+
+    .product-image{
+      aspect-ratio:1/1.08;
+      position:relative;
+
+      background:#e4dfd6;
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      color:#77736b;
+      text-align:center;
+
+      overflow:hidden;
+    }
+
+    .product-badge{
+      position:absolute;
+      top:12px;
+      left:12px;
+
+      padding:7px 10px;
+
+      background:var(--paper);
+
+      font-size:9px;
+      font-weight:700;
+      letter-spacing:.08em;
+    }
+
+    .quick-add{
+      position:absolute;
+      left:12px;
+      right:12px;
+      bottom:12px;
+
+      border:none;
+
+      background:var(--ink);
+      color:#fff;
+
+      padding:13px;
+
+      opacity:0;
+      transform:translateY(10px);
+
+      transition:.25s;
+      cursor:pointer;
+    }
+
+    .product-card:hover .quick-add{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    .product-info{
+      padding:16px 2px 0;
+    }
+
+    .product-type{
+      font-size:9px;
+      color:var(--muted);
+      letter-spacing:.12em;
+    }
+
+    .product-name{
+      font-size:15px;
+      font-weight:700;
+      margin-top:5px;
+    }
+
+    .product-bottom{
+      margin-top:12px;
+
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+
+      font-size:12px;
+    }
+
+    .product-desc{
+      color:var(--muted);
+    }
+
+    .price{
+      font-weight:700;
+      white-space:nowrap;
+    }
+
+
+    /* =========================
+       PARTY HERO
+    ========================== */
+
+    .party{
+      padding:26px;
+      background:var(--red);
+      color:white;
+    }
+
+    .party-grid{
+      min-height:82vh;
+
+      display:grid;
+      grid-template-columns:.72fr 1.28fr;
+    }
+
+    .party-copy{
+      padding:70px;
+
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+
+    .party-copy .kicker{
+      color:var(--accent);
+    }
+
+    .party-copy p{
+      max-width:400px;
+      color:rgba(255,255,255,.78);
+    }
+
+    .party-image{
+      background:
+        linear-gradient(
+          145deg,
+          #49372f,
+          #243028 60%,
+          #17201b
+        );
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      color:rgba(255,255,255,.7);
+      text-align:center;
+    }
+
+
+    /* =========================
+       PARTY SHOP
+    ========================== */
+
+    .party-shop{
+      padding:140px 0;
+    }
+
+    .party-header{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:60px;
+      margin-bottom:65px;
+    }
+
+    .party-header-right{
+      display:flex;
+      align-items:flex-end;
+    }
+
+    .shop-group{
+      margin-top:70px;
+    }
+
+    .group-title{
+      margin-bottom:24px;
+
+      padding-bottom:15px;
+      border-bottom:1px solid var(--line);
+
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .group-title h4{
+      font-size:24px;
+      letter-spacing:-.03em;
+    }
+
+    .group-title span{
+      font-size:10px;
+      color:var(--muted);
+      letter-spacing:.12em;
+    }
+
+
+    /* =========================
+       GIFT
+    ========================== */
+
+    .gift-section{
+      background:var(--paper);
+      padding:30px;
+    }
+
+    .gift-grid{
+      min-height:760px;
+
+      display:grid;
+      grid-template-columns:1.18fr .82fr;
+    }
+
+    .gift-image{
+      background:#d7d0c5;
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      color:#777;
+      text-align:center;
+    }
+
+    .gift-copy{
+      padding:70px;
+
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+
+    .gift-copy .kicker{
+      color:var(--red);
+    }
+
+    .gift-copy h2{
+      font-size:clamp(54px,7vw,96px);
+      line-height:.87;
+      letter-spacing:-.065em;
+    }
+
+    .gift-product{
+      border-top:1px solid var(--line);
+      padding-top:22px;
+    }
+
+    .gift-label{
+      font-size:10px;
+      color:var(--muted);
+      letter-spacing:.1em;
+    }
+
+    .gift-name{
+      margin-top:6px;
+      font-size:20px;
+      font-weight:700;
+    }
+
+    .gift-desc{
+      margin-top:10px;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .gift-price{
+      margin-top:20px;
+      font-weight:700;
+    }
+
+    .gift-button{
+      margin-top:24px;
+
+      display:inline-flex;
+
+      padding:13px 18px;
+      border:1px solid var(--ink);
+      border-radius:999px;
+
+      font-size:12px;
+      font-weight:700;
+    }
+
+
+    /* =========================
+       END
+    ========================== */
+
+    .end{
+      padding:150px 0 100px;
+    }
+
+    .end-heading{
+      text-align:center;
+      max-width:1000px;
+      margin:auto;
+    }
+
+    .end-heading h2{
+      font-size:clamp(60px,8vw,120px);
+      line-height:.84;
+      letter-spacing:-.07em;
+    }
+
+    .end-heading p{
+      margin:35px auto 0;
+      max-width:520px;
+      color:var(--muted);
+    }
+
+
+    /* =========================
+       SHOP ALL
+    ========================== */
+
+    .shop-all{
+      padding:50px 0 140px;
+    }
+
+    .shop-category-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+    }
+
+    .shop-category{
+      min-height:330px;
+      padding:26px;
+
+      background:var(--paper);
+
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+
+      border-top:2px solid var(--ink);
+
+      transition:.25s;
+    }
+
+    .shop-category:hover{
+      transform:translateY(-5px);
+    }
+
+    .shop-category-no{
+      font-size:10px;
+      color:var(--muted);
+    }
+
+    .shop-category h4{
+      font-size:28px;
+      line-height:1;
+      letter-spacing:-.04em;
+    }
+
+    .shop-category p{
+      font-size:12px;
+      color:var(--muted);
+    }
+
+    .shop-category-arrow{
+      font-size:22px;
+    }
+
+
+    /* =========================
+       FINAL CTA
+    ========================== */
+
+    .final-cta{
+      padding:26px;
+    }
+
+    .final-cta-inner{
+      min-height:480px;
+
+      padding:70px;
+
+      background:var(--green);
+      color:white;
+
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+
+    .final-cta-inner .kicker{
+      color:var(--accent);
+    }
+
+    .final-cta h2{
+      font-size:clamp(70px,9vw,135px);
+      line-height:.82;
+      letter-spacing:-.075em;
+    }
+
+    .final-bottom{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-end;
+      gap:30px;
+    }
+
+    .final-bottom p{
+      color:rgba(255,255,255,.72);
+      font-size:13px;
+    }
+
+    .final-button{
+      background:var(--accent);
+      color:var(--ink);
+
+      padding:16px 25px;
+      border-radius:999px;
+
+      font-size:12px;
+      font-weight:700;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer{
+      padding:42px 32px;
+    }
+
+    .footer-inner{
+      border-top:1px solid var(--line);
+      padding-top:24px;
+
+      display:flex;
+      justify-content:space-between;
+
+      font-size:10px;
+      color:var(--muted);
+      letter-spacing:.06em;
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media(max-width:900px){
+
+      .container,
+      .nav-inner{
+        width:calc(100% - 32px);
+      }
+
+      .nav-links a:not(.nav-shop){
+        display:none;
+      }
+
+      .hero{
+        padding:14px;
+      }
+
+      .hero-grid{
+        grid-template-columns:1fr;
+      }
+
+      .hero-copy{
+        min-height:570px;
+        padding:44px 30px;
+      }
+
+      .hero-visual{
+        min-height:520px;
+      }
+
+      .intro{
+        padding:90px 0;
+      }
+
+      .intro-grid,
+      .feature-grid,
+      .party-grid,
+      .party-header,
+      .gift-grid{
+        grid-template-columns:1fr;
+      }
+
+      .feature-image{
+        min-height:520px;
+      }
+
+      .feature-panel,
+      .party-copy,
+      .gift-copy{
+        min-height:530px;
+        padding:45px 30px;
+      }
+
+      .product-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .shop-category-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .final-cta-inner{
+        padding:45px 30px;
+      }
+
+      .final-bottom{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+    }
+
+    @media(max-width:550px){
+
+      .product-grid{
+        gap:8px;
+      }
+
+      .product-desc{
+        display:none;
+      }
+
+      .shop-category-grid{
+        grid-template-columns:1fr;
+      }
+
+      .hero-badge{
+        width:105px;
+        height:105px;
+        font-size:10px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+
+<!-- =========================
+     NAV
+========================== -->
+
+<nav class="nav">
+  <div class="nav-inner">
+
+    <a href="#" class="logo">
+      KAIYUAN FOOD
+    </a>
+
+    <div class="nav-links">
+      <a href="#morning">Morning</a>
+      <a href="#party">Party</a>
+      <a href="#gift">Gifts</a>
+
+      <a href="#shop" class="nav-shop">
+        SHOP
+      </a>
+    </div>
+
+  </div>
+</nav>
+
+
+<!-- =========================
+     COVER
+========================== -->
+
+<header class="hero">
+
+  <div class="hero-grid">
+
+    <div class="hero-copy">
+
+      <div>
+
+        <div class="kicker">
+          CHRISTMAS 2026
+        </div>
+
+        <h1>
+          CHRISTMAS<br>
+          AT HOME
+        </h1>
+
+        <div class="hero-sub">
+          今晚，不只是吃一頓飯。<br>
+          是把喜歡的人，留在同一張桌子上。
+        </div>
+
+      </div>
+
+
+      <div class="hero-bottom">
+
+        <span>
+          COFFEE · FOOD · PARTY · GIFTS
+        </span>
+
+        <a href="#morning">
+          EXPLORE ↓
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="hero-visual">
+
+      <div>
+        CHRISTMAS HERO IMAGE<br><br>
+        聖誕居家派對 × 大型餐桌 × 咖啡 × 熱食
+      </div>
+
+      <div class="hero-badge">
+        SET THE<br>
+        TABLE
+      </div>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- =========================
+     INTRO
+========================== -->
+
+<section class="intro">
+
+  <div class="container intro-grid">
+
+    <div>
+
+      <div class="kicker">
+        A CHRISTMAS TOGETHER
+      </div>
+
+      <h2 class="intro-title" style="margin-top:24px;">
+        從第一杯咖啡，<br>
+        到最後一道甜點。
+      </h2>
+
+    </div>
+
+
+    <div class="intro-right">
+
+      <p class="body-copy">
+        聖誕節可以很盛大，
+        也可以只是一張餐桌、幾道喜歡的食物，
+        還有願意留下來多坐一會的人。
+        從晨間咖啡到晚上的 Christmas Party，
+        一起準備今年的節日餐桌。
+      </p>
+
+      <div class="category-nav">
+
+        <a href="#morning" class="pill">
+          01 Morning
+        </a>
+
+        <a href="#party" class="pill">
+          02 Party
+        </a>
+
+        <a href="#gift" class="pill">
+          03 Gift
+        </a>
+
+        <a href="#shop" class="pill">
+          Shop All
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     01 MORNING
+========================== -->
+
+<section class="morning" id="morning">
+
+  <div class="container">
+
+    <div class="feature-grid">
+
+      <div class="feature-image">
+        CHRISTMAS MORNING IMAGE<br><br>
+        咖啡 × 保久乳 × 貝果 × 冬日晨光
+      </div>
+
+
+      <div class="feature-panel">
+
+        <div>
+
+          <div class="kicker">
+            01 / CHRISTMAS MORNING
+          </div>
+
+          <h2 class="section-title">
+            START<br>
+            SLOW.
+          </h2>
+
+          <p>
+            聖誕節不用急著開始。<br>
+            先沖一杯咖啡，
+            再讓早餐慢慢準備好。
+          </p>
+
+        </div>
+
+
+        <a href="#morning-products" class="feature-link">
+
+          <span>
+            SHOP MORNING PICKS
+          </span>
+
+          <span>
+            →
+          </span>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     MORNING PRODUCTS
+========================== -->
+
+<section class="products" id="morning-products">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <h3>
+        Morning Picks
+      </h3>
+
+      <a href="#shop">
+        VIEW ALL →
+      </a>
+
+    </div>
+
+
+    <div class="product-grid">
+
+
+      <article class="product-card">
+
+        <div class="product-image">
+
+          戀職人保久乳<br>
+          商品 PNG
+
+          <div class="product-badge">
+            MORNING PICK
+          </div>
+
+          <button class="quick-add">
+            ＋ QUICK ADD
+          </button>
+
+        </div>
+
+        <div class="product-info">
+
+          <div class="product-type">
+            MILK
+          </div>
+
+          <div class="product-name">
+            戀職人保久乳
+          </div>
+
+          <div class="product-bottom">
+
+            <span class="product-desc">
+              早餐與咖啡的日常搭配
+            </span>
+
+            <span class="price">
+              NT$___
+            </span>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <article class="product-card">
+
+        <div class="product-image">
+
+          精品咖啡<br>
+          商品 PNG
+
+          <button class="quick-add">
+            ＋ QUICK ADD
+          </button>
+
+        </div>
+
+        <div class="product-info">
+
+          <div class="product-type">
+            COFFEE
+          </div>
+
+          <div class="product-name">
+            精品咖啡
+          </div>
+
+          <div class="product-bottom">
+
+            <span class="product-desc">
+              從喜歡的香氣開始一天
+            </span>
+
+            <span class="price">
+              NT$___
+            </span>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <article class="product-card">
+
+        <div class="product-image">
+
+          金獎濾掛咖啡<br>
+          商品 PNG
+
+          <div class="product-badge">
+            BEST SELLER
+          </div>
+
+          <button class="quick-add">
+            ＋ QUICK ADD
+          </button>
+
+        </div>
+
+        <div class="product-info">
+
+          <div class="product-type">
+            DRIP COFFEE
+          </div>
+
+          <div class="product-name">
+            戀金獎濾掛咖啡
+          </div>
+
+          <div class="product-bottom">
+
+            <span class="product-desc">
+              不用器具也能喝好咖啡
+            </span>
+
+            <span class="price">
+              NT$___
+            </span>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <article class="product-card">
+
+        <div class="product-image">
+
+          貝果<br>
+          商品 PNG
+
+          <button class="quick-add">
+            ＋ QUICK ADD
+          </button>
+
+        </div>
+
+        <div class="product-info">
+
+          <div class="product-type">
+            BREAKFAST
+          </div>
+
+          <div class="product-name">
+            早餐貝果
+          </div>
+
+          <div class="product-bottom">
+
+            <span class="product-desc">
+              簡單加熱就是一份早餐
+            </span>
+
+            <span class="price">
+              NT$___
+            </span>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     02 PARTY
+========================== -->
+
+<section class="party" id="party">
+
+  <div class="party-grid">
+
+    <div class="party-copy">
+
+      <div class="kicker">
+        02 / CHRISTMAS PARTY
+      </div>
+
+      <h2 class="section-title">
+        SET<br>
+        THE TABLE.
+      </h2>
+
+      <p>
+        從前菜、熱食、飲品到甜點，
+        把喜歡的味道一起端上桌。
+        今晚的聖誕派對，
+        就從這張餐桌開始。
+      </p>
+
+    </div>
+
+
+    <div class="party-image">
+
+      CHRISTMAS PARTY HERO IMAGE<br><br>
+      雞翅 × 德腸 × 雞塊 × 麵包 × 飲品 × 甜點
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     PARTY SHOP
+========================== -->
+
+<section class="party-shop">
+
+  <div class="container">
+
+    <div class="party-header">
+
+      <div>
+
+        <div class="kicker">
+          BUILD YOUR PARTY TABLE
+        </div>
+
+        <h2
+          class="section-title"
+          style="margin-top:20px;"
+        >
+          ALL ON<br>
+          THE TABLE.
+        </h2>
+
+      </div>
+
+
+      <div class="party-header-right">
+
+        <p class="body-copy">
+          不需要複雜準備。
+          從鹹食、甜點到飲品，
+          依照派對人數挑選，
+          就能快速完成一桌節日餐點。
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- SAVORY -->
+
+    <div class="shop-group">
+
+      <div class="group-title">
+
+        <h4>
+          Savory
+        </h4>
+
+        <span>
+          PARTY FOOD
+        </span>
+
+      </div>
+
+
+      <div class="product-grid">
+
+
+        <article class="product-card">
+
+          <div class="product-image">
+
+            雞翅<br>
+            商品圖
+
+            <button class="quick-add">
+              ＋ QUICK ADD
+            </button>
+
+          </div>
+
+          <div class="product-info">
+
+            <div class="product-type">
+              PARTY FOOD
+            </div>
+
+            <div class="product-name">
+              派對雞翅
+            </div>
+
+            <div class="product-bottom">
+
+              <span class="product-desc">
+                適合分享的派對熱食
+              </span>
+
+              <span class="price">
+                NT$___
+              </span>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <article class="product-card">
+
+          <div class="product-image">
+
+            德式香腸<br>
+            商品圖
+
+            <button class="quick-add">
+              ＋ QUICK ADD
+            </button>
+
+          </div>
+
+          <div class="product-info">
+
+            <div class="product-type">
+              PARTY FOOD
+            </div>
+
+            <div class="product-name">
+              德式香腸
+            </div>
+
+            <div class="product-bottom">
+
+              <span class="product-desc">
+                聚餐餐桌的經典搭配
+              </span>
+
+              <span class="price">
+                NT$___
+              </span>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <article class="product-card">
+
+          <div class="product-image">
+
+            雞塊<br>
+            商品圖
+
+            <button class="quick-add">
+              ＋ QUICK ADD
+            </button>
+
+          </div>
+
+          <div class="product-info">
+
+            <div class="product-type">
+              FINGER FOOD
+            </div>
+
+            <div class="product-name">
+              派對雞塊
+            </div>
+
+            <div class="product-bottom">
+
+              <span class="product-desc">
+                大人小孩都方便分享
+              </span>
+
+              <span class="price">
+                NT$___
+              </span>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <article class="product-card">
+
+          <div class="product-image">
+
+            麵包／料麵包<br>
+            商品圖
+
+            <button class="quick-add">
+              ＋ QUICK ADD
+            </button>
+
+          </div>
+
+          <div class="product-info">
+
+            <div class="product-type">
+              BREAD
+            </div>
+
+            <div class="product-name">
+              派對麵包
+            </div>
+
+            <div class="product-bottom">
+
+              <span class="product-desc">
+                搭配熱食與飲品更完整
+              </span>
+
+              <span class="price">
+                NT$___
+              </span>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+    </div>
+
+
+    <!-- SWEET -->
+
+    <div class="shop-group">
+
+      <div class="group-title">
+
+        <h4>
+          Sweet
+        </h4>
+
+        <span>
+          DESSERT
+        </span>
+
+      </div>
+
+
+      <div class="product-grid">
+
+
+        <article class="product-card">
+
+          <div class="product-image">
+
+            聖誕甜點<br>
+            商品圖
+
+            <button class="quick-add">
+              ＋ QUICK ADD
+            </button>
+
+          </div>
+
+          <div class="product-info">
+
+            <div class="product-type">
+              DESSERT
+            </div>
+
+            <div class="product-name">
+              派對甜點
+            </div>
+
+            <div class="product-bottom">
+
+              <span class="product-desc">
+                留一點甜，給派對最後
+              </span>
+
+              <span class="price">
+                NT$___
+              </span>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <article class="product-card">
+
+          <div class="product-image">
+
+            烘焙甜點<br>
+            商品圖
+
+            <button class="quick-add">
+              ＋ QUICK ADD
+            </button>
+
+          </div>
+
+          <div class="product-info">
+
+            <div class="product-type">
+              BAKERY
+            </div>
+
+            <div class="product-name">
+              烘焙點心
+            </div>
+
+            <div class="product-bottom">
+
+              <span class="product-desc">
+                搭配咖啡剛剛好
+              </span>
+
+              <span class="price">
+                NT$___
+              </span>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+    </div>
+
+
+    <!-- DRINK -->
+
+    <div class="shop-group">
+
+      <div class="group-title">
+
+        <h4>
+          Drink
+        </h4>
+
+        <span>
+          COFFEE & DRINKS
+        </span>
+
+      </div>
+
+
+      <div class="product-grid">
+
+
+        <article class="product-card">
+
+          <div class="product-image">
+
+            MONIN 糖漿<br>
+            商品圖
+
+            <button class="quick-add">
+              ＋ QUICK ADD
+            </button>
+
+          </div>
+
+          <div class="product-info">
+
+            <div class="product-type">
+              SYRUP
+            </div>
+
+            <div class="product-name">
+              MONIN 糖漿
+            </div>
+
+            <div class="product-bottom">
+
+              <span class="product-desc">
+                做一杯自己的 Christmas Drink
+              </span>
+
+              <span class="price">
+                NT$___
+              </span>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <article class="product-card">
+
+          <div class="product-image">
+
+            咖啡／飲品<br>
+            商品圖
+
+            <button class="quick-add">
+              ＋ QUICK ADD
+            </button>
+
+          </div>
+
+          <div class="product-info">
+
+            <div class="product-type">
+              DRINK
+            </div>
+
+            <div class="product-name">
+              派對飲品
+            </div>
+
+            <div class="product-bottom">
+
+              <span class="product-desc">
+                為餐桌準備一杯冬日飲品
+              </span>
+
+              <span class="price">
+                NT$___
+              </span>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     03 GIFT
+========================== -->
+
+<section class="gift-section" id="gift">
+
+  <div class="gift-grid">
+
+    <div class="gift-image">
+
+      CHRISTMAS GIFT HERO IMAGE<br><br>
+      精品咖啡禮盒 × 松枝 × 緞帶 × 冬日送禮
+
+    </div>
+
+
+    <div class="gift-copy">
+
+      <div>
+
+        <div class="kicker">
+          03 / LITTLE CHRISTMAS GIFTS
+        </div>
+
+        <h2 style="margin-top:25px;">
+          FOR<br>
+          SOMEONE.
+        </h2>
+
+        <p class="body-copy" style="margin-top:34px;">
+          有些禮物不用很大，
+          只要剛好適合對方。
+          把一段可以慢慢喝完的時間，
+          包進今年的聖誕禮物裡。
+        </p>
+
+      </div>
+
+
+      <div class="gift-product">
+
+        <div class="gift-label">
+          FOR THE COFFEE LOVER
+        </div>
+
+        <div class="gift-name">
+          精品咖啡聖誕禮盒
+        </div>
+
+        <div class="gift-desc">
+          精選咖啡組合，適合節慶送禮與冬日分享。
+        </div>
+
+        <div class="gift-price">
+          NT$___
+        </div>
+
+        <a href="#" class="gift-button">
+          SHOP THE GIFT →
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     END
+========================== -->
+
+<section class="end">
+
+  <div class="container">
+
+    <div class="end-heading">
+
+      <div class="kicker">
+        TONIGHT, WE CELEBRATE
+      </div>
+
+      <h2 style="margin-top:25px;">
+        MAKE IT<br>
+        CHRISTMAS.
+      </h2>
+
+      <p>
+        從第一杯咖啡，
+        到最後一道甜點。
+        今年聖誕，
+        把喜歡的味道都放上桌。
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     SHOP ALL
+========================== -->
+
+<section class="shop-all" id="shop">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <h3>
+        Shop the<br>
+        Christmas Table
+      </h3>
+
+      <span class="body-copy">
+        依照你的聖誕計畫，
+        快速找到需要的商品。
+      </span>
+
+    </div>
+
+
+    <div class="shop-category-grid">
+
+
+      <a href="#morning" class="shop-category">
+
+        <div class="shop-category-no">
+          01
+        </div>
+
+        <div>
+          <h4>
+            Morning
+          </h4>
+
+          <p style="margin-top:12px;">
+            保久乳 / 咖啡 / 貝果
+          </p>
+        </div>
+
+        <div class="shop-category-arrow">
+          →
+        </div>
+
+      </a>
+
+
+      <a href="#party" class="shop-category">
+
+        <div class="shop-category-no">
+          02
+        </div>
+
+        <div>
+          <h4>
+            Party Food
+          </h4>
+
+          <p style="margin-top:12px;">
+            雞翅 / 德腸 / 雞塊 / 麵包
+          </p>
+        </div>
+
+        <div class="shop-category-arrow">
+          →
+        </div>
+
+      </a>
+
+
+      <a href="#party" class="shop-category">
+
+        <div class="shop-category-no">
+          03
+        </div>
+
+        <div>
+          <h4>
+            Drinks<br>
+            & Sweets
+          </h4>
+
+          <p style="margin-top:12px;">
+            MONIN / 飲品 / 甜點
+          </p>
+        </div>
+
+        <div class="shop-category-arrow">
+          →
+        </div>
+
+      </a>
+
+
+      <a href="#gift" class="shop-category">
+
+        <div class="shop-category-no">
+          04
+        </div>
+
+        <div>
+          <h4>
+            Gifts
+          </h4>
+
+          <p style="margin-top:12px;">
+            精品咖啡 / 聖誕禮盒
+          </p>
+        </div>
+
+        <div class="shop-category-arrow">
+          →
+        </div>
+
+      </a>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     FINAL CTA
+========================== -->
+
+<section class="final-cta">
+
+  <div class="final-cta-inner">
+
+    <div class="kicker">
+      CHRISTMAS COLLECTION 2026
+    </div>
+
+    <h2>
+      SET<br>
+      THE TABLE.
+    </h2>
+
+
+    <div class="final-bottom">
+
+      <p>
+        Coffee · Milk · Party Food · Sweets · Gifts<br>
+        準備好今年的聖誕餐桌。
+      </p>
+
+      <a href="#" class="final-button">
+        SHOP ALL PRODUCTS →
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================== -->
+
+<footer>
+
+  <div class="footer-inner">
+
+    <span>
+      KAIYUAN FOOD
+    </span>
+
+    <span>
+      CHRISTMAS AT HOME · 2026
+    </span>
+
+  </div>
+
+</footer>
+
+</body>
+</html>
